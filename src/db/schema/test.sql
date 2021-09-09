@@ -1,11 +1,11 @@
 WITH days(day) AS (
-  VALUES ( 'Monday' ), ( 'Tuesday' )
+  VALUES ( 'Monday' ), ( 'Tuesday' ), (' Wednesday' ), (' Thursday' ), (' Friday' )
 )
 INSERT INTO days (name)
 SELECT day FROM days;
 
 WITH times(time) AS (
-	VALUES ('12pm'), ('1pm')
+	VALUES ('12pm'), ('1pm'), ('2pm'), ('3pm'), ('4pm')
 )
 INSERT INTO appointments (time, day_id)
 SELECT time, id as day_id FROM days, times ORDER BY day_id, time;
